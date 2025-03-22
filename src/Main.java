@@ -1,5 +1,6 @@
+import java.time.LocalDate;
 public class Main {
-    public static void checkingOfTheYear(int year) {
+    public static void determineTheYear(int year) {
         if (year >= 1584 && (year % 4) == 0) {
             System.out.println(year + " год является високосным");
         } else if (year >= 1584 && (year % 400) == 0) {
@@ -9,7 +10,7 @@ public class Main {
         }
     }
 
-    public static void chekingfOfTheOs(int clientOS, int clientDeviceYear) {
+    public static void determineTheOs(int clientOS, int clientDeviceYear) {
         if (clientOS == 1 && clientDeviceYear < 2015) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         } else if (clientOS == 0 && clientDeviceYear < 2015) {
@@ -35,14 +36,14 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Задание 1");
-        int year = 2021;
-        checkingOfTheYear(year);
+        int year = LocalDate.now().getYear();
+        determineTheYear(year);
         System.out.println();
 
         System.out.println("Задание 2");
         int clientOS = 1;
         int clientDeviceYear = 2012;
-        chekingfOfTheOs(clientOS, clientDeviceYear);
+        determineTheOs(clientOS, clientDeviceYear);
         System.out.println();
 
         System.out.println("Задание 3");
